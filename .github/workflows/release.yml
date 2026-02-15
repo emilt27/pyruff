@@ -37,8 +37,8 @@ jobs:
           # Linux aarch64
           - os: ubuntu-latest
             target: aarch64
-          # macOS x86_64
-          - os: macos-13
+          # macOS x86_64 (cross-compile on ARM runner)
+          - os: macos-latest
             target: x86_64
           # macOS ARM64
           - os: macos-latest
