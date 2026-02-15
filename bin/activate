@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Common setup for all bin/ scripts. Source this, don't execute.
+
+BIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$BIN_DIR")"
+
+# Activate venv first (it resets PATH)
+if [ -f "$PROJECT_DIR/.venv/bin/activate" ]; then
+    source "$PROJECT_DIR/.venv/bin/activate"
+fi
+
+# Add cargo to PATH after venv activation
+CARGO_HOME="${CARGO_HOME:-${HOME:-$(eval echo ~)}/.cargo}"
+if [ -d "$CARGO_HOME/bin" ]; then
+    export PATH="$CARGO_HOME/bin:$PATH"
+fi
+
+cd "$PROJECT_DIR"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/activate"
+
+echo "Building pyruff (dev mode)..."
+maturin develop
+echo "Done."

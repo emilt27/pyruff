@@ -1,0 +1,27 @@
+[package]
+name = "pyruff"
+version = "0.15.1"
+edition = "2021"
+authors = ["Emil Temirov <emil.temirov@gmail.com>"]
+
+[lib]
+name = "_native"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.28", features = ["extension-module"] }
+anyhow = "1"
+
+# Ruff crates — git deps (not published on crates.io)
+ruff_linter = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_python_formatter = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_workspace = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_python_parser = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_source_file = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_text_size = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_python_ast = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_db = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+ruff_formatter = { git = "https://github.com/astral-sh/ruff", tag = "0.15.1" }
+
+strum = { version = "0.27", features = ["derive"] }
+strum_macros = "0.27"

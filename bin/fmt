@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/activate"
+
+echo "=== Formatting Rust ==="
+cargo fmt
+
+echo "=== Formatting Python ==="
+ruff format python/ tests/
+
+echo "Done."

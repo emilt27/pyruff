@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BIN_DIR="$(dirname "$0")"
+
+echo "=== Lint ==="
+"$BIN_DIR/lint"
+
+echo ""
+echo "=== Build ==="
+"$BIN_DIR/build"
+
+echo ""
+echo "=== Test ==="
+"$BIN_DIR/test"

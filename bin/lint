@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/activate"
+
+echo "=== Rust format check ==="
+cargo fmt --check
+
+echo "=== Clippy ==="
+cargo clippy -- -D warnings
+
+echo "=== Ruff lint ==="
+ruff check python/ tests/
+
+echo "=== Ruff format check ==="
+ruff format --check python/ tests/
+
+echo "All checks passed."

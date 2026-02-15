@@ -1,0 +1,24 @@
+[project]
+name = "pyruff"
+version = "0.15.1"
+description = "Native Python API for Ruff linter and formatter"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+    { name = "Emil Temirov", email = "emil.temirov@gmail.com" },
+]
+keywords = ["ruff", "linter", "formatter", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+module-name = "ruff._native"
