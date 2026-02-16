@@ -1,13 +1,19 @@
 [project]
 name = "pyruff"
-version = "0.15.1rc1"
+version = "0.15.1rc2"
 description = "Native Python API for Ruff linter and formatter"
 requires-python = ">=3.12"
 license = "MIT"
 authors = [
     { name = "Emil Temirov", email = "emil.temirov@gmail.com" },
 ]
+readme = "README.md"
 keywords = ["ruff", "linter", "formatter", "python"]
+
+[project.urls]
+Homepage = "https://github.com/emilt27/pyruff"
+Repository = "https://github.com/emilt27/pyruff"
+Issues = "https://github.com/emilt27/pyruff/issues"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Rust",

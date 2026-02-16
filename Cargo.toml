@@ -1,6 +1,6 @@
 [package]
 name = "pyruff"
-version = "0.15.1-rc.1"
+version = "0.15.1-rc.2"
 edition = "2021"
 authors = ["Emil Temirov <emil.temirov@gmail.com>"]
 
