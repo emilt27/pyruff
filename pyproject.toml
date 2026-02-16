@@ -2,7 +2,7 @@
 name = "pyruff"
 version = "0.15.1rc3"
 description = "Native Python API for Ruff linter and formatter"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 license = "MIT"
 authors = [
     { name = "Emil Temirov", email = "emil.temirov@gmail.com" },
