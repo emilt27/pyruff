@@ -1,6 +1,6 @@
 [project]
 name = "pyruff"
-version = "0.15.1rc4"
+version = "0.15.1rc5"
 description = "Native Python API for Ruff linter and formatter"
 requires-python = ">=3.11"
 license = "MIT"
@@ -27,4 +27,4 @@ build-backend = "maturin"
 [tool.maturin]
 features = ["pyo3/extension-module"]
 python-source = "python"
-module-name = "ruff._native"
+module-name = "pyruff._native"

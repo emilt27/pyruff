@@ -1,6 +1,6 @@
 # Rules API
 
-## `ruff.rules()`
+## `pyruff.rules()`
 
 List all available ruff rules.
 
@@ -11,16 +11,16 @@ def rules(*, preview: bool = False) -> list[Rule]
 ### Example
 
 ```python
-import ruff
+import pyruff
 
-all_rules = ruff.rules()
+all_rules = pyruff.rules()
 print(f"Total: {len(all_rules)} rules")
 
 # Include preview rules
-all_including_preview = ruff.rules(preview=True)
+all_including_preview = pyruff.rules(preview=True)
 ```
 
-## `ruff.rule()`
+## `pyruff.rule()`
 
 Get detailed information about a specific rule.
 
@@ -31,7 +31,7 @@ def rule(code: str) -> Rule
 ### Example
 
 ```python
-r = ruff.rule("F401")
+r = pyruff.rule("F401")
 print(r.code)         # "F401"
 print(r.name)         # "unused-import"
 print(r.linter)       # "Pyflakes"
@@ -42,7 +42,7 @@ print(r.url)          # Link to docs
 
 Raises `RuleNotFoundError` for unknown rule codes.
 
-## `ruff.linters()`
+## `pyruff.linters()`
 
 List all supported linters.
 
@@ -53,7 +53,7 @@ def linters() -> list[Linter]
 ### Example
 
 ```python
-for linter in ruff.linters():
+for linter in pyruff.linters():
     print(f"{linter.prefix}: {linter.name}")
 # F: Pyflakes
 # E: pycodestyle

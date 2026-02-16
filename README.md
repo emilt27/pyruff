@@ -13,26 +13,26 @@ pip install pyruff
 ## Quick Start
 
 ```python
-import ruff
+import pyruff
 
 # Format code
-formatted = ruff.format_string("x=1\n")
+formatted = pyruff.format_string("x=1\n")
 # "x = 1\n"
 
 # Lint code
-diagnostics = ruff.check("import os\n")
+diagnostics = pyruff.check("import os\n")
 for d in diagnostics:
     print(f"{d.code}: {d.message}")
 # F401: `os` imported but unused
 
 # Auto-fix violations
-result = ruff.fix("import os\nimport sys\nprint(sys.path)\n")
+result = pyruff.fix("import os\nimport sys\nprint(sys.path)\n")
 print(result.output)
 # import sys\nprint(sys.path)\n
 
 # List rules
-all_rules = ruff.rules()
-r = ruff.rule("F401")
+all_rules = pyruff.rules()
+r = pyruff.rule("F401")
 print(f"{r.code}: {r.name} ({r.linter})")
 ```
 
@@ -43,24 +43,26 @@ print(f"{r.code}: {r.name} ({r.linter})")
 - **Formatting** — `format_string()`, `format_file()` with all formatting options
 - **Rules** — `rules()`, `rule()`, `linters()` for rule metadata and introspection
 - **Config resolution** — Automatically discovers `ruff.toml` / `pyproject.toml` config, just like `ruff` CLI
-- **Python 3.12 — 3.14** support
+- **Python 3.11 — 3.14** support
 
 ## Config Resolution
 
 pyruff automatically discovers and applies your existing ruff configuration:
 
 ```python
+import pyruff
+
 # Auto-discovers ruff.toml / pyproject.toml from CWD
-diagnostics = ruff.check("import os\n")
+diagnostics = pyruff.check("import os\n")
 
 # Explicit config path
-diagnostics = ruff.check("import os\n", config="path/to/ruff.toml")
+diagnostics = pyruff.check("import os\n", config="path/to/ruff.toml")
 
 # Ignore all config, use defaults
-diagnostics = ruff.check("import os\n", isolated=True)
+diagnostics = pyruff.check("import os\n", isolated=True)
 
 # Explicit params override config values
-formatted = ruff.format_string(code, line_length=120)
+formatted = pyruff.format_string(code, line_length=120)
 ```
 
 ## Versioning
@@ -81,7 +83,7 @@ For example, `pyruff==0.15.1` uses ruff `0.15.1` crates internally.
 
 ### Prerequisites
 
-- **Python 3.12+** (3.14 supported)
+- **Python 3.11+** (3.14 supported)
 - **Rust 1.91+** (install via [rustup](https://rustup.rs/))
 - **Maturin** (Python build tool for Rust extensions)
 
@@ -89,7 +91,7 @@ For example, `pyruff==0.15.1` uses ruff `0.15.1` crates internally.
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-org/pyruff.git
+git clone https://github.com/emilt27/pyruff.git
 cd pyruff
 
 # Create virtual environment

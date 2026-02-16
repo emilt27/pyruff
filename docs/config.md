@@ -17,25 +17,25 @@ If no project-level config is found, it also checks for user-level config (`~/.c
 ### Auto-discovery (default)
 
 ```python
-import ruff
+import pyruff
 
 # Automatically finds ruff.toml / pyproject.toml from CWD
-diagnostics = ruff.check("import os\n")
-formatted = ruff.format_string("x=1\n")
+diagnostics = pyruff.check("import os\n")
+formatted = pyruff.format_string("x=1\n")
 ```
 
 ### Explicit config file
 
 ```python
-diagnostics = ruff.check("import os\n", config="path/to/ruff.toml")
-formatted = ruff.format_string("x=1\n", config="path/to/pyproject.toml")
+diagnostics = pyruff.check("import os\n", config="path/to/ruff.toml")
+formatted = pyruff.format_string("x=1\n", config="path/to/pyproject.toml")
 ```
 
 ### Isolated mode (ignore all config)
 
 ```python
-diagnostics = ruff.check("import os\n", isolated=True)
-formatted = ruff.format_string("x=1\n", isolated=True)
+diagnostics = pyruff.check("import os\n", isolated=True)
+formatted = pyruff.format_string("x=1\n", isolated=True)
 ```
 
 ### Override config values
@@ -44,10 +44,10 @@ Explicit parameters always override config values:
 
 ```python
 # Config might say line-length = 88, but this overrides to 120
-formatted = ruff.format_string(code, line_length=120)
+formatted = pyruff.format_string(code, line_length=120)
 
 # Config might have select = ["E"], but this overrides to ["F"]
-diagnostics = ruff.check(code, select=["F"])
+diagnostics = pyruff.check(code, select=["F"])
 ```
 
 ## Supported config options

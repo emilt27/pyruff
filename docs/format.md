@@ -1,6 +1,6 @@
 # Formatting API
 
-## `ruff.format_string()`
+## `pyruff.format_string()`
 
 Format a Python source code string.
 
@@ -30,26 +30,26 @@ def format_string(
 ### Examples
 
 ```python
-import ruff
+import pyruff
 
 # Basic formatting (auto-discovers config)
-formatted = ruff.format_string("x=1\n")
+formatted = pyruff.format_string("x=1\n")
 assert formatted == "x = 1\n"
 
 # Explicit config file
-formatted = ruff.format_string("x=1\n", config="ruff.toml")
+formatted = pyruff.format_string("x=1\n", config="ruff.toml")
 
 # Ignore all config, use defaults
-formatted = ruff.format_string("x=1\n", isolated=True)
+formatted = pyruff.format_string("x=1\n", isolated=True)
 
 # Custom line length (overrides config)
-formatted = ruff.format_string(long_code, line_length=120)
+formatted = pyruff.format_string(long_code, line_length=120)
 
 # Format as .pyi stub
-formatted = ruff.format_string(code, filename="types.pyi")
+formatted = pyruff.format_string(code, filename="types.pyi")
 ```
 
-## `ruff.format_file()`
+## `pyruff.format_file()`
 
 Format a file on disk.
 
@@ -75,12 +75,12 @@ def format_file(
 ### Example
 
 ```python
-result = ruff.format_file("main.py")
+result = pyruff.format_file("main.py")
 print(result.changed)  # True if formatting changed anything
 print(result.output)   # Formatted source
 
 # Check only, don't write
-result = ruff.format_file("main.py", write=False)
+result = pyruff.format_file("main.py", write=False)
 ```
 
 ## Types

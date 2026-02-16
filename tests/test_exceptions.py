@@ -1,6 +1,6 @@
 import pytest
 
-import ruff
+import pyruff as ruff
 
 
 def test_ruff_error_hierarchy():

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from ruff._native import get_rule as _get_rule
-from ruff._native import get_rules as _get_rules
-from ruff._types import Linter, Rule
+from pyruff._native import get_rule as _get_rule
+from pyruff._native import get_rules as _get_rules
+from pyruff._types import Linter, Rule
 
 
 def _raw_to_rule(raw: dict) -> Rule:

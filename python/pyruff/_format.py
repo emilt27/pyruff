@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from ruff._native import format_string as _format_string
-from ruff._types import FormatResult
+from pyruff._native import format_string as _format_string
+from pyruff._types import FormatResult
 
 
 def format_string(

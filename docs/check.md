@@ -1,6 +1,6 @@
 # Linting API
 
-## `ruff.check()`
+## `pyruff.check()`
 
 Run the ruff linter on a source code string.
 
@@ -36,49 +36,49 @@ def check(
 ### Examples
 
 ```python
-import ruff
+import pyruff
 
 # Basic check (auto-discovers config)
-diagnostics = ruff.check("import os\n")
+diagnostics = pyruff.check("import os\n")
 assert diagnostics[0].code == "F401"
 
 # Explicit config file
-diagnostics = ruff.check("import os\n", config="path/to/ruff.toml")
+diagnostics = pyruff.check("import os\n", config="path/to/ruff.toml")
 
 # Ignore all config, use defaults
-diagnostics = ruff.check("import os\n", isolated=True)
+diagnostics = pyruff.check("import os\n", isolated=True)
 
 # Select specific rules
-diagnostics = ruff.check("x=1\n", select=["E", "W"])
+diagnostics = pyruff.check("x=1\n", select=["E", "W"])
 
 # Ignore specific rules
-diagnostics = ruff.check("import os\n", ignore=["F401"])
+diagnostics = pyruff.check("import os\n", ignore=["F401"])
 assert len(diagnostics) == 0
 ```
 
-## `ruff.check_file()`
+## `pyruff.check_file()`
 
 Lint a file from disk.
 
 ```python
-diagnostics = ruff.check_file("main.py")
+diagnostics = pyruff.check_file("main.py")
 
 # With explicit config
-diagnostics = ruff.check_file("main.py", config="ruff.toml")
+diagnostics = pyruff.check_file("main.py", config="ruff.toml")
 ```
 
-## `ruff.check_paths()`
+## `pyruff.check_paths()`
 
 Lint multiple files/directories.
 
 ```python
-results = ruff.check_paths(["src/", "tests/"])
+results = pyruff.check_paths(["src/", "tests/"])
 for path, diagnostics in results.items():
     for d in diagnostics:
         print(f"{path}:{d.code}: {d.message}")
 ```
 
-## `ruff.fix()`
+## `pyruff.fix()`
 
 Apply auto-fixes to source code.
 
@@ -97,7 +97,7 @@ def fix(
 ### Example
 
 ```python
-result = ruff.fix("import os\nimport sys\nprint(sys.path)\n")
+result = pyruff.fix("import os\nimport sys\nprint(sys.path)\n")
 print(result.output)        # Fixed code without unused import
 print(result.fixed_count)   # Number of fixes applied
 print(result.remaining)     # Unfixed diagnostics

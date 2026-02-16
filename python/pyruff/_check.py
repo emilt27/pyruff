@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from ruff._native import check_source as _check_source
-from ruff._native import fix_source as _fix_source
-from ruff._types import Diagnostic, FixResult
+from pyruff._native import check_source as _check_source
+from pyruff._native import fix_source as _fix_source
+from pyruff._types import Diagnostic, FixResult
 
 
 def _raw_to_diagnostic(raw: dict, filename: str) -> Diagnostic:

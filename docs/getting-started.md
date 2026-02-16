@@ -11,18 +11,18 @@ pip install pyruff
 ### Format Python code
 
 ```python
-import ruff
+import pyruff
 
-formatted = ruff.format_string("x=1\n")
+formatted = pyruff.format_string("x=1\n")
 print(formatted)  # "x = 1\n"
 ```
 
 ### Lint Python code
 
 ```python
-import ruff
+import pyruff
 
-diagnostics = ruff.check("import os\n")
+diagnostics = pyruff.check("import os\n")
 for d in diagnostics:
     print(f"{d.code}: {d.message}")
 # F401: `os` imported but unused
@@ -31,9 +31,9 @@ for d in diagnostics:
 ### Auto-fix violations
 
 ```python
-import ruff
+import pyruff
 
-result = ruff.fix("import os\nimport sys\nprint(sys.path)\n")
+result = pyruff.fix("import os\nimport sys\nprint(sys.path)\n")
 print(result.output)
 # import sys
 # print(sys.path)
@@ -42,28 +42,28 @@ print(result.output)
 ### List all rules
 
 ```python
-import ruff
+import pyruff
 
-rules = ruff.rules()
+rules = pyruff.rules()
 print(f"Total rules: {len(rules)}")
 
-r = ruff.rule("F401")
+r = pyruff.rule("F401")
 print(f"{r.code}: {r.name} ({r.linter})")
 ```
 
 ### Use config files
 
 ```python
-import ruff
+import pyruff
 
 # Auto-discovers ruff.toml / pyproject.toml from CWD
-diagnostics = ruff.check("import os\n")
+diagnostics = pyruff.check("import os\n")
 
 # Explicit config path
-diagnostics = ruff.check("import os\n", config="ruff.toml")
+diagnostics = pyruff.check("import os\n", config="ruff.toml")
 
 # Ignore all config files
-diagnostics = ruff.check("import os\n", isolated=True)
+diagnostics = pyruff.check("import os\n", isolated=True)
 ```
 
 ## How It Works

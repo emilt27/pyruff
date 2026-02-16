@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import ruff
+import pyruff as ruff
 
 
 def test_check_with_explicit_config(tmp_path):

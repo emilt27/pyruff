@@ -1,4 +1,4 @@
-import ruff
+import pyruff as ruff
 
 
 def test_format_string_basic(unformatted_code):

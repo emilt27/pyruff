@@ -1,9 +1,9 @@
 """pyruff — Native Python API for Ruff linter and formatter."""
 
-from ruff._check import check, check_file, check_paths, fix
-from ruff._format import format_file, format_string
-from ruff._rules import linters, rule, rules
-from ruff._types import (
+from pyruff._check import check, check_file, check_paths, fix
+from pyruff._format import format_file, format_string
+from pyruff._rules import linters, rule, rules
+from pyruff._types import (
     Diagnostic,
     Edit,
     Fix,
@@ -13,7 +13,7 @@ from ruff._types import (
     Location,
     Rule,
 )
-from ruff.exceptions import (
+from pyruff.exceptions import (
     ConfigError,
     ParseError,
     RuffError,

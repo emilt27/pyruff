@@ -1,4 +1,4 @@
-import ruff
+import pyruff as ruff
 
 
 def test_check_unused_import(unused_import_code):
